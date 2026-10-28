@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "csi-compression"
+version = "0.1.0"
+description = "Learned CSI feedback compression benchmark for 5G-Advanced and 6G (3GPP Rel-18 to Rel-20)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Sunny Arelli"}]
+keywords = ["6G", "3GPP", "Release 20", "wireless", "5G-Advanced"]
+dependencies = ["numpy>=1.22"]
+
+[project.urls]
+Homepage = "https://github.com/sunnyarelli/csi-compression"
+Issues = "https://github.com/sunnyarelli/csi-compression/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+csi-compression = "csicomp.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
